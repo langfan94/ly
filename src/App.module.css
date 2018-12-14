@@ -1,0 +1,36 @@
+#heart .contain{
+  fill: #f7a7b5;
+}
+
+.wrap{
+  width: 100%;
+  height: 100%;
+}
+
+.envelope{
+  position: relative;
+}
+
+.envelopeTitle{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: #f7a7b5;
+  background-image: linear-gradient(70deg, #7ab9f5, #fff);
+}
+
+
+.envelopeLoveTime{
+  font-size: 14px;
+  margin-top: 30px;
+  position: absolute;
+  top: 40px;
+  right: 50%;
+  color: #f7a7b5;
+}
+
+.envelopeLoveTime em {
+  color: #7ab9f5;
+}
