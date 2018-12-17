@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 import anime from 'animejs'
-// import Typed from 'typed.js';
-import styles from './App.module.css';
+import Typed from 'typed.js';
+import styles from './App.module.scss';
+import TypeComponent from './util/TypeComponent.js';
 
 class App extends Component {
   constructor(props) {
@@ -31,13 +32,6 @@ class App extends Component {
         return (l - i) + .45;
       }
     })
-    // const options = {
-    //   strings: ["First ^1000 sentence.", "Second sentence."],
-    //   typeSpeed: 40,
-    //   backSpeed: 20,
-    //   loop: true
-    // }
-    // const typed = new Typed("#element", options);
     const self = this;
     let oLongTime = new Date().getTime() - this.state.startTime.getTime();
     this.setState({
@@ -51,6 +45,11 @@ class App extends Component {
       console.log('oLongTime', oLongTime / 1000);
     }, 3000)
   }
+
+  componentWillUnmount() {
+    this.typed.destroy();
+  }
+
   render() {
     const {toLiu, longTime} = this.state
     return (
@@ -59,10 +58,9 @@ class App extends Component {
            <path d="M50,88.9C25.5,78.2,0.5,54.4,3.8,31.1S41.3,1.8,50,29.9c8.7-28.2,42.8-22.2,46.2,1.2S74.5,78.2,50,88.9z"/>
         </svg> */}
         {/* <div id="element"></div> */}
-        <div className={styles.envelope}>
-          <h2 className={styles.envelopeTitle}>{toLiu}</h2>
-          <span className={styles.envelopeLoveTime}>Love Time <em>{longTime + '秒'}</em></span>
-        </div>
+        {/* <span className={styles.envelopeLoveTime}>Love Time: <em>{longTime + '秒'}</em></span> */}
+        <h2 className={styles.envelopeTitle}>{toLiu}</h2>
+        <TypeComponent strings={['我美丽可爱的小可爱<br/>圣诞快乐呀~<br/>']}/>
       </div>
     );
   }
