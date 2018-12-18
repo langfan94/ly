@@ -1,0 +1,50 @@
+
+.wrap{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -20px;
+  left: 0;
+}
+
+@for $i from 1 to 20 {
+ .iFlake#{$i}{
+  position: absolute;
+  width: 5 * abs($i - 10) + px;
+  height: 5 * abs($i - 10) + px;
+  background-image: url('./i-flake.png');
+  background-position: center;
+  background-size: 100% 100%;
+  -webkit-animation: snow abs($i - 10) + s linear infinite;
+  animation: snow#{$i} abs($i - 10) + s linear infinite;
+  -webkit-animation-delay: abs($i - 10) + s;
+  animation-delay: abs($i - 10) + s;
+ }
+ @keyframes snow#{$i}{
+  0% {
+   top: 0;
+   transform: scale($i/20);
+   left: abs($i - 10) * 10 + px;
+  }
+
+  100% {
+   top: 100%;
+   transform: scale($i/10);
+   left: ($i - 3) * 50 + px;
+   }
+ }
+ @-webkit-keyframes snow{
+  0% {
+    top: 0;
+    transform: scale($i/20);
+    left: abs($i - 10) * 10 + px;
+   }
+ 
+   100% {
+    top: 100%;
+    transform: scale($i/10);
+    left: ($i - 3) * 50 + px;
+    }
+ }
+}
+

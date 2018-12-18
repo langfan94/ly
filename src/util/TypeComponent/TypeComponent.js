@@ -3,13 +3,13 @@ import Typed from 'typed.js';
 import styles from './TypeComponent.module.scss';
 
 
-class typeComponent extends Component{
+class TypeComponent extends Component{
 
  componentDidMount() {
   const { strings } = this.props;
   const options = {
    strings,
-   typeSpeed: 50,
+   typeSpeed: 100,
    loop: true,
    fadeOut: false,
    onComplete: (self) => {
@@ -30,8 +30,8 @@ class typeComponent extends Component{
  }
 }
 
-typeComponent.defaultProps = {
+TypeComponent.defaultProps = {
  strings: []
 }
 
-export default typeComponent;
+export default TypeComponent;

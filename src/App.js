@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import anime from 'animejs'
 import Typed from 'typed.js';
 import styles from './App.module.scss';
-import TypeComponent from './util/TypeComponent.js';
+import TypeComponent from './util/TypeComponent/TypeComponent';
+import Snowflake from './util/Snowflake/Snowflake';
 
 class App extends Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class App extends Component {
         {/* <span className={styles.envelopeLoveTime}>Love Time: <em>{longTime + '秒'}</em></span> */}
         <h2 className={styles.envelopeTitle}>{toLiu}</h2>
         <TypeComponent strings={['我美丽可爱的小可爱<br/>圣诞快乐呀~<br/>']}/>
+        <Snowflake></Snowflake>
       </div>
     );
   }
