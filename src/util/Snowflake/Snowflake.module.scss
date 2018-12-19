@@ -1,4 +1,4 @@
-
+:global{
 .wrap{
   position: fixed;
   width: 100%;
@@ -15,10 +15,12 @@
   background-image: url('./i-flake.png');
   background-position: center;
   background-size: 100% 100%;
-  -webkit-animation: snow abs($i - 10) + s linear infinite;
-  animation: snow#{$i} abs($i - 10) + s linear infinite;
-  -webkit-animation-delay: abs($i - 4) + s;
-  animation-delay: abs($i - 4) + s;
+  :local{
+    -webkit-animation: snow#{$i} abs($i - 10) + s linear infinite;
+    animation: snow#{$i} abs($i - 10) + s linear infinite;
+    -webkit-animation-delay: abs($i - 4) + s;
+    animation-delay: abs($i - 4) + s;
+  }
  }
  @keyframes snow#{$i}{
   0% {
@@ -64,5 +66,6 @@
     opacity: 0;
     }
  }
+}
 }
 

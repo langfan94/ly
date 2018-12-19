@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Snowflake.scss';
+import './Snowflake.module.scss';
 
 class Snowflake extends Component{
   constructor(props) {
