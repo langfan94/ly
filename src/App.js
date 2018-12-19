@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import anime from 'animejs'
-import Typed from 'typed.js';
 import styles from './App.module.scss';
 import TypeComponent from './util/TypeComponent/TypeComponent';
 import Snowflake from './util/Snowflake/Snowflake';
@@ -45,10 +44,14 @@ class App extends Component {
       })
       console.log('oLongTime', oLongTime / 1000);
     }, 3000)
-  }
 
-  componentWillUnmount() {
-    this.typed.destroy();
+    const heartMove = anime({
+      targets: '.heart',
+      rotate: '1turn',
+      duration: 2000,
+      direction: 'alternate',
+      loop: true
+    })
   }
 
   render() {
@@ -63,6 +66,18 @@ class App extends Component {
         <h2 className={styles.envelopeTitle}>{toLiu}</h2>
         <TypeComponent strings={['我美丽可爱的小可爱<br/>圣诞快乐呀~<br/>']}/>
         <Snowflake></Snowflake>
+        <svg className="heart" fill='#f7a7b5'>
+          <defs>
+          <filter id="f1" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+            <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+            values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+            <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+          </defs>
+          <path d="M50,88.9C25.5,78.2,0.5,54.4,3.8,31.1S41.3,1.8,50,29.9c8.7-28.2,42.8-22.2,46.2,1.2S74.5,78.2,50,88.9z" filter="url(#f1)"/>
+        </svg> 
       </div>
     );
   }
