@@ -10,40 +10,58 @@
 @for $i from 1 to 20 {
  .iFlake#{$i}{
   position: absolute;
-  width: 5 * abs($i - 10) + px;
-  height: 5 * abs($i - 10) + px;
+  width: 20px;
+  height: 20px;
   background-image: url('./i-flake.png');
   background-position: center;
   background-size: 100% 100%;
   -webkit-animation: snow abs($i - 10) + s linear infinite;
   animation: snow#{$i} abs($i - 10) + s linear infinite;
-  -webkit-animation-delay: abs($i - 10) + s;
-  animation-delay: abs($i - 10) + s;
+  -webkit-animation-delay: abs($i - 4) + s;
+  animation-delay: abs($i - 4) + s;
  }
  @keyframes snow#{$i}{
   0% {
-   top: 0;
-   transform: scale($i/20);
-   left: abs($i - 10) * 10 + px;
+   top: -$i * 5 + px;
+   transform: scale(abs($i - 10) / 5) rotate(0deg) translateX($i + px);
+   left: abs($i - 3) * 10 + px;
+   opacity: 1;
+  }
+
+  50%{
+   top: 80%;
+   transform: scale(abs($i - 10) / 6) rotate(($i - 10) * 30 + deg) translateX(($i - 10) * 3 + px);
+   left: ($i - 3) * 20 + px;
+   opacity: $i / 20 + 0.1;
   }
 
   100% {
    top: 100%;
-   transform: scale($i/10);
-   left: ($i - 3) * 50 + px;
+   transform: scale(abs($i - 10) / 7 - 0.3) rotate($i * 10 + deg) translateX(($i - 10) * 5 + px);
+   left: ($i - 3) * 30 + 20 + px;
+   opacity: 0;
    }
  }
  @-webkit-keyframes snow{
   0% {
-    top: 0;
-    transform: scale($i/20);
-    left: abs($i - 10) * 10 + px;
+    top: -$i * 5 + px;
+    transform: scale(abs($i - 10) / 5) rotate(0deg) translateX($i + px);
+    left: abs($i - 3) * 10 + px;
+    opacity: 1;
+   }
+ 
+   50%{
+    top: 80%;
+    transform: scale(abs($i - 10) / 6) rotate(($i - 10) * 30 + deg) translateX(($i - 10) * 3 + px);
+    left: ($i - 3) * 20 + px;
+    opacity: $i / 20 + 0.1;
    }
  
    100% {
     top: 100%;
-    transform: scale($i/10);
-    left: ($i - 3) * 50 + px;
+    transform: scale(abs($i - 10) / 7 - 0.3) rotate($i * 10 + deg) translateX(($i - 10) * 5 + px);
+    left: ($i - 3) * 30 + 20 + px;
+    opacity: 0;
     }
  }
 }

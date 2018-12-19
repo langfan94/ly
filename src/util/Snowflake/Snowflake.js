@@ -11,7 +11,7 @@ class Snowflake extends Component{
 
   componentDidMount() {
    const oFlake = [];
-   for(let i = 0; i < 99; i++) {
+   for(let i = 0; i < 100; i++) {
     const num = Math.floor(Math.random() * 19 + 1);
     const oSpan = <i className={'iFlake' + num} key={i}></i>;
     oFlake.push(oSpan);
