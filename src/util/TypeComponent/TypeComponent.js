@@ -9,7 +9,7 @@ class TypeComponent extends Component{
   const { strings } = this.props;
   const options = {
    strings,
-   typeSpeed: 100,
+   typeSpeed: 200,
    loop: true,
    fadeOut: false,
    onComplete: (self) => {

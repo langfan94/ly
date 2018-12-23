@@ -64,7 +64,7 @@ class App extends Component {
         {/* <div id="element"></div> */}
         {/* <span className={styles.envelopeLoveTime}>Love Time: <em>{longTime + '秒'}</em></span> */}
         <h2 className={styles.envelopeTitle}>{toLiu}</h2>
-        <TypeComponent strings={['我美丽可爱的小可爱<br/>圣诞快乐呀~<br/>']}/>
+        <TypeComponent strings={['烟雨蒙蒙不自倦<br/>佳人伊现心始动<br/>辗转反侧寤寐求<br/>参差喜乐践行之<br/>纵横荆棘勿自哀<br/>愿携伊人共初心']}/>
         <Snowflake></Snowflake>
         <svg className="heart" fill='#f7a7b5'>
           <defs>
@@ -77,7 +77,8 @@ class App extends Component {
           </filter>
           </defs>
           <path d="M50,88.9C25.5,78.2,0.5,54.4,3.8,31.1S41.3,1.8,50,29.9c8.7-28.2,42.8-22.2,46.2,1.2S74.5,78.2,50,88.9z" filter="url(#f1)"/>
-        </svg> 
+        </svg>
+        <div className={styles.envelopeTips}>Merry Christms</div> 
       </div>
     );
   }
